@@ -1,0 +1,53 @@
+
+const mongoose = require('mongoose');
+
+const soundSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+  },
+  audioFileUrl: {
+    type: String,
+    required: true,
+  },
+  tags: [
+    {
+      type: String,
+    },
+  ],
+  volume: {
+    type: Number,
+    default: 1,
+  },
+  distortion: {
+    type: Number,
+    default: 0,
+  },
+  reverb: {
+    type: Number,
+    default: 0,
+  },
+  likes: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  ],
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  // Add any additional fields specific to your sound requirements
+});
+
+const Sound = mongoose.model('Sound', soundSchema);
+
+module.exports = Sound;

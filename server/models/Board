@@ -1,0 +1,23 @@
+const mongoose = require('mongoose');
+
+const pad = new mongoose.Schema({
+ 
+    soundId: {
+ 
+        type: String,
+ 
+        required: true,
+ 
+    },
+
+});
+
+const board = new mongoose.Schema({
+  
+    pads: [pad],
+  
+});
+
+const Board = mongoose.model('Board', board);
+
+module.exports = Board;

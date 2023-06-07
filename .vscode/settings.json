@@ -1,0 +1,18 @@
+{
+    "files.autoGuessEncoding": true,
+
+    
+    "folders": [
+        {
+        // Source code
+        "name": "server",
+        "path": "./server"
+        },
+        {
+        // Docs and release notes
+        "name": "client",
+        "path": "./client"
+        }
+    ]
+      
+}
